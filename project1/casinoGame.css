@@ -1,0 +1,35 @@
+body {
+  background-color: lightblue;
+}
+h1 {
+  color: red;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+#parentOfDivs {
+  margin: 25px auto;
+}
+.window {
+  height: 150px;
+  width: 150px;
+  border: 40px inset yellow;
+  display: inline-block;
+  margin-left: 135px;
+  border-radius: 12%;
+}
+button {
+  margin: 60px auto;
+  display: block;
+}
+#square1 {
+  background-image: url('https://pixabay.com/photo-580379/');
+}
+
+
+
+
+
+
+
