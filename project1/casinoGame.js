@@ -26,9 +26,41 @@ stressedImg,
 jqueryImg
 ]
 
+var imageIndex = 0;
 $(document).ready(function() {
+  //add a click event to the button to start the game
+  $('button').click(startGame);
+function startGame() {
+var interval = setInterval(scrollTiles, 200);
+  function scrollTiles() {
+  $('.window').attr('src', images[imageIndex]);
+  imageIndex++;
+  }
+}
 })
 
+
+
+//window.setInterval(startGame(), 5000);
+  // setTimeout(changeBack, 500);
+  // function changeBack() {
+  //   $('#img3').attr("src", garfieldImg)
+  //   }
+
+
+  // function startGame() {
+  //   for (let i = 0; i < images.length; i++) {
+  //     $('#img3').attr('src', images[i]);
+  //   }
+  // }
+
+ // function startGame() {
+ //    setTimeout(takeNextImg, 500);
+ //    function takeNextImg() {
+ //      var nextImage = images.shift();
+ //      $('#img3').attr("src", nextImage);
+ //    }
+ //  }
 
 
 
