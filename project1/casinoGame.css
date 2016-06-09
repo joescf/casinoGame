@@ -4,9 +4,12 @@ body {
 h1 {
   color: red;
   text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 10em;
 }
 h2 {
   text-align: center;
+  font-family: 'Special Elite', cursive;
 }
 #parentOfDivs {
   margin: 25px auto;
@@ -23,12 +26,15 @@ button {
   margin: 60px auto;
   display: block;
 }
-#square1 {
-  background-image: url('https://pixabay.com/photo-580379/');
+#img1 {
+border: 40px inset yellow;
 }
-
-
-
+#img2 {
+border: 40px inset green;
+}
+#img3 {
+border: 40px inset orange;
+}
 
 
 

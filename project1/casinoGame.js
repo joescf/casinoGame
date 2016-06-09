@@ -26,17 +26,31 @@ stressedImg,
 jqueryImg
 ]
 
-var imageIndex = 0;
+var imageIndex1 = Math.floor(Math.random() * images.length);
+var imageIndex2 = Math.floor(Math.random() * images.length);
+var imageIndex3 = Math.floor(Math.random() * images.length);
 $(document).ready(function() {
   //add a click event to the button to start the game
   $('button').click(startGame);
+  //make the windows change source on click with a timer
 function startGame() {
-var interval = setInterval(scrollTiles, 200);
-  function scrollTiles() {
-  $('.window').attr('src', images[imageIndex]);
-  imageIndex++;
-  }
+var intervalId = setInterval(scrollTiles, 200);
 }
+  //stop the image when clicked
+  $('#img1').click(stopScroll);
+function stopScroll() {
+    $(intervalId);
+    $('#img1').clearInterval(intervalId);
+    console.log('hi');
+  }
+function scrollTiles() {
+  $('#img1').attr('src', images[imageIndex1]);
+  imageIndex1 = Math.floor(Math.random() * images.length);
+  $('#img2').attr('src', images[imageIndex2]);
+  imageIndex2 = Math.floor(Math.random() * images.length);
+   $('#img3').attr('src', images[imageIndex3]);
+  imageIndex3 = Math.floor(Math.random() * images.length);
+    }
 })
 
 
