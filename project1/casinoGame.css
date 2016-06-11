@@ -1,25 +1,35 @@
 body {
-  background-color: lightblue;
+  /*background-color: lightblue;*/
+  background-image: url('http://visitnatchez.org/wp-content/uploads/2016/02/MagBluff-Casino.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: red;
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: 10em;
 }
 h2 {
+  margin-top: 10px;
   text-align: center;
   font-family: 'Special Elite', cursive;
+  font-size: 50px;
+  transform: rotate(14deg);
+  color: lightpink;
 }
-#parentOfDivs {
+#parentOfWindows {
   margin: 25px auto;
 }
 .window {
-  height: 150px;
-  width: 150px;
+  height: 125px;
+  width: 125px;
   border: 40px inset yellow;
   display: inline-block;
-  margin-left: 135px;
+  margin-left: 200px;
   border-radius: 12%;
 }
 button {
@@ -35,6 +45,48 @@ border: 40px inset green;
 #img3 {
 border: 40px inset orange;
 }
+#speeds {
+  display: inline-block;
+}
+#speedRange {
+  width: 75%;
+}
+.theSpeeds {
+  margin: 0 40px;
+}
+#range {
+  text-align: center;
+}
+.bet {
+  width: 10%;
+}
+#stewie {
+  position: absolute;
+  z-index: 1;
+  right: 550px;
+}
+h4 {
+  font-size: 25px;
+  color: red;
+}
+#bettingDiv {
+  background-color: lightblue;
+  margin-right: 50em;
+}
+#userBet {
+  width: 90%;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

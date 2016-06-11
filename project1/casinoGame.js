@@ -1,3 +1,4 @@
+$(document).ready(function() {
 //locaton of images
 var barImg = 'http://icons.iconarchive.com/icons/designcontest/casino/96/Bar-icon.png';
 var treeImg = 'https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg';
@@ -25,32 +26,87 @@ goldImg,
 stressedImg,
 jqueryImg
 ]
-
+var speed;
+var intervalId;
 var imageIndex1 = Math.floor(Math.random() * images.length);
 var imageIndex2 = Math.floor(Math.random() * images.length);
 var imageIndex3 = Math.floor(Math.random() * images.length);
-$(document).ready(function() {
+var bet = $('#userBet');
+bet.mousemove(scrollBet);
+$('.window').click(stopScroll)
   //add a click event to the button to start the game
   $('button').click(startGame);
-  //make the windows change source on click with a timer
 function startGame() {
-var intervalId = setInterval(scrollTiles, 200);
+// place the input value in a variable
+  speed = parseInt($('#speedRange').val(), 10) - 1;
+  console.log('you are on speed ' + speed);
+// place the potentioal speeds in a variable
+  var speeds = [650, 450, 250, 50];
+//  set the interval Id and create a setInterval function
+  intervalId = setInterval(scrollTiles, speeds[speed]);
+// remove stop class from window to restart scrolling on button
+$('.window').removeClass('stop');
+// remove the stewie pic when button is clicked
+$('#stewie').removeAttr('src');
 }
   //stop the image when clicked
-  $('#img1').click(stopScroll);
 function stopScroll() {
-    $(intervalId);
-    $('#img1').clearInterval(intervalId);
-    console.log('hi');
-  }
-function scrollTiles() {
-  $('#img1').attr('src', images[imageIndex1]);
-  imageIndex1 = Math.floor(Math.random() * images.length);
-  $('#img2').attr('src', images[imageIndex2]);
-  imageIndex2 = Math.floor(Math.random() * images.length);
-   $('#img3').attr('src', images[imageIndex3]);
-  imageIndex3 = Math.floor(Math.random() * images.length);
+  // add a class of 'stop' to the clicked tile
+    $(this).addClass('stop');
+  //check if all three tiles have been clicked (have the class of stop)
+    if ($('.stop').length === 3) {
+      clearInterval(intervalId);
+      console.log(intervalId);
+      checkBackground();
     }
+  }
+// check to see if background images are the same
+function checkBackground() {
+// grab the image tiles
+//check to see if the image src's are the same
+if (($('#img1').attr('src') === $('#img2').attr('src')) && ($('#img1').attr('src') === $('#img3').attr('src')) && ($('#img2').attr('src') === $('#img3').attr('src'))) {
+// if all three src's are the same a pot of gold pops up
+  alert('Congratulations you just won $' + ($('#userBet').val()) * $('#speedRange').val());
+}
+else {
+  $('#stewie').attr('src', 'https://i.ytimg.com/vi/l1mzGj1LVkQ/hqdefault.jpg');
+  }
+}
+function scrollBet() {
+  $('#usersBet').text($('#userBet').val());
+}
+function scrollTiles() {
+  if (!$('#img1').hasClass('stop')) {
+    $('#img1').attr('src', images[imageIndex1]);
+    setIndex(1);
+  }
+  if(!$('#img2').hasClass('stop')) {
+    $('#img2').attr('src', images[imageIndex2]);
+    setIndex(2);
+  }
+  if(!$('#img3').hasClass('stop')) {
+    $('#img3').attr('src', images[imageIndex3]);
+    setIndex(3);
+    }
+  }
+
+function setIndex(imageIndex) {
+ var newIndex = Math.floor(Math.random() * images.length);
+// switch(speed) {
+
+// }
+ switch(imageIndex) {
+  case 1:
+    imageIndex1 = newIndex;
+    break;
+  case 2:
+    imageIndex2 = newIndex;
+    break;
+  case 3:
+    imageIndex3 = newIndex;
+    break;
+ }
+}
 })
 
 

@@ -9,27 +9,35 @@
   <script type="text/javascript" src="casinoGame.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="http://previews.123rf.com/images/maxkabakov/maxkabakov1108/maxkabakov110800069/10252438-Green-shiny-paper-dollar-sign-on-white-background-Stock-Photo-symbol.jpg">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
+
 
 
 </head>
 <body>
   <h1>Ca$ino Game</h1>
   <h2>Try it if you dare!!!</h2>
-    <div id="parentOfDivs">
+  <img src="" alt="" id="stewie">
+    <div id="parentOfWindows">
       <img class="window" id="img1" src="">
       <img class="window" id="img2" src="">
       <img class="window" id="img3" src="">
-      <!-- <div id="square1" class="window"></div>
-      <div id="square2" class="window"></div>
-      <div id="square3" class="window"></div> -->
     </div>
-      <button>Click to start the game</button><br>
-      <input type="range" max="3" min="1">
-      <div id="picsForSpeed">
-        <img src="" alt="picShouldBeHere">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+    <div id="bettingDiv">
+      <h4>Place your bet: $<span id="usersBet">1</span></h4>
+      <input id="userBet" type="range" class="bet" min="1" max="1000" value="1">
+    </div>
+      <div id="range">
+        <input id="speedRange" type="range" max="4" min="1" value="1">
       </div>
+      <br>
+      <div id="speeds">
+        <img class="theSpeeds" src="../picsForProject/casinoGameImgs/lightSpeed.png" alt="picShouldBeHere">
+        <img class="theSpeeds" src="../picsForProject/casinoGameImgs/ridiculousSpeed.png" alt="">
+        <img class="theSpeeds" src="../picsForProject/casinoGameImgs/ludicrousSpeed.png" alt="">
+        <img class="theSpeeds" src="../picsForProject/casinoGameImgs/plaid.png" alt="">
+      </div>
+      <button>Click to start the game</button><br>
 </body>
 </html>
