@@ -13,23 +13,27 @@ h1 {
   font-family: 'Lobster', cursive;
   font-size: 10em;
 }
-h2 {
+#dare {
   margin-top: 10px;
   text-align: center;
   font-family: 'Special Elite', cursive;
   font-size: 50px;
   transform: rotate(14deg);
-  color: lightpink;
+  color: orange;
+}
+.lastWord {
+  color: darkred;
 }
 #parentOfWindows {
   margin: 25px auto;
+  text-align: center;
 }
 .window {
   height: 125px;
   width: 125px;
   border: 40px inset yellow;
   display: inline-block;
-  margin-left: 200px;
+  margin-left: 50px;
   border-radius: 12%;
 }
 button {
@@ -76,13 +80,33 @@ h4 {
 #userBet {
   width: 90%;
 }
-
-
-
-
-
-
-
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.fadeIn {
+  animation: fadeIn;
+  animation-duration: 1s;
+}
+#winningOutcomeDiv {
+  /*border: 4px solid yellow;*/
+  position: absolute;
+  z-index: 1;
+  left: 300px;
+  top: 125px;
+}
+#winningResult {
+  font-size: 45px;
+  text-align: center;
+  color: lightgreen;
+  font-family: 'Cherry Cream Soda', cursive;
+}
+.hidden {
+  visibility: hidden;
+}
+#potOfGold {
+  margin-left: 250px;
+}
 
 
 

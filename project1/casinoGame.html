@@ -7,9 +7,10 @@
   <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
   <link rel="stylesheet" href="casinoGame.css">
   <script type="text/javascript" src="casinoGame.js"></script>
+  <link rel="icon" href="http://previews.123rf.com/images/maxkabakov/maxkabakov1108/maxkabakov110800069/10252438-Green-shiny-paper-dollar-sign-on-white-background-Stock-Photo-symbol.jpg">
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
-  <link rel="icon" href="http://previews.123rf.com/images/maxkabakov/maxkabakov1108/maxkabakov110800069/10252438-Green-shiny-paper-dollar-sign-on-white-background-Stock-Photo-symbol.jpg">
+  <link href='https://fonts.googleapis.com/css?family=Cherry+Cream+Soda' rel='stylesheet' type='text/css'>
   <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
 
 
@@ -17,7 +18,11 @@
 </head>
 <body>
   <h1>Ca$ino Game</h1>
-  <h2>Try it if you dare!!!</h2>
+  <h2 id="dare">Try it if you <span class="lastWord">DARE!!!</span></h2>
+  <div id="winningOutcomeDiv" class="hidden">
+    <h2 id="winningResult"></h2>
+    <img id="potOfGold" src="potOfGold.png" alt="potOfGold" hieght="400px" width="400px">
+  </div>
   <img src="" alt="" id="stewie">
     <div id="parentOfWindows">
       <img class="window" id="img1" src="">

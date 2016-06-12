@@ -26,6 +26,8 @@ goldImg,
 stressedImg,
 jqueryImg
 ]
+//global variables
+var actualBet;
 var speed;
 var intervalId;
 var imageIndex1 = Math.floor(Math.random() * images.length);
@@ -33,21 +35,24 @@ var imageIndex2 = Math.floor(Math.random() * images.length);
 var imageIndex3 = Math.floor(Math.random() * images.length);
 var bet = $('#userBet');
 bet.mousemove(scrollBet);
-$('.window').click(stopScroll)
-  //add a click event to the button to start the game
-  $('button').click(startGame);
+$('.window').click(stopScroll);
+//add a click event to the button to start the game
+$('button').click(startGame);
 function startGame() {
 // place the input value in a variable
   speed = parseInt($('#speedRange').val(), 10) - 1;
   console.log('you are on speed ' + speed);
-// place the potentioal speeds in a variable
-  var speeds = [650, 450, 250, 50];
-//  set the interval Id and create a setInterval function
+// place the potential speeds in a variable
+  var speeds = [750, 550, 350, 200];
+//Log actual bet so user can't increase bet after tiles have started scrolling
+  actualBet = bet.val();
+// set the interval Id and create a setInterval function
   intervalId = setInterval(scrollTiles, speeds[speed]);
 // remove stop class from window to restart scrolling on button
 $('.window').removeClass('stop');
 // remove the stewie pic when button is clicked
 $('#stewie').removeAttr('src');
+$('#winningOutcomeDiv').addClass('hidden').removeClass('fadeIn');
 }
   //stop the image when clicked
 function stopScroll() {
@@ -66,10 +71,12 @@ function checkBackground() {
 //check to see if the image src's are the same
 if (($('#img1').attr('src') === $('#img2').attr('src')) && ($('#img1').attr('src') === $('#img3').attr('src')) && ($('#img2').attr('src') === $('#img3').attr('src'))) {
 // if all three src's are the same a pot of gold pops up
-  alert('Congratulations you just won $' + ($('#userBet').val()) * $('#speedRange').val());
+$('#winningOutcomeDiv').removeClass('hidden').addClass('fadeIn');
+$('#winningResult').text('Congratulations you just won $' + actualBet * $('#speedRange').val())
+// alert('Congratulations you just won $' + actualBet * $('#speedRange').val());
 }
 else {
-  $('#stewie').attr('src', 'https://i.ytimg.com/vi/l1mzGj1LVkQ/hqdefault.jpg');
+  $('#stewie').attr('src', 'https://i.ytimg.com/vi/l1mzGj1LVkQ/hqdefault.jpg').addClass('fadeIn');
   }
 }
 function scrollBet() {
@@ -92,9 +99,6 @@ function scrollTiles() {
 
 function setIndex(imageIndex) {
  var newIndex = Math.floor(Math.random() * images.length);
-// switch(speed) {
-
-// }
  switch(imageIndex) {
   case 1:
     imageIndex1 = newIndex;
@@ -131,6 +135,8 @@ function setIndex(imageIndex) {
  //      $('#img3').attr("src", nextImage);
  //    }
  //  }
+
+
 
 
 
